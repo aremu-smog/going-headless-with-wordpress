@@ -1,3 +1,27 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@font-face {
+    font-family: 'RedHat';
+    src: url(../fonts/RedHatDisplay-Regular.ttf);
+    font-weight: 400;
+}
+@font-face {
+    font-family: 'RedHat';
+    src: url(../fonts/RedHatDisplay-Medium.ttf);
+    font-weight: 500;
+}
+@font-face {
+    font-family: 'RedHat';
+    src: url(../fonts/RedHatDisplay-Bold.ttf);
+    font-weight: 700;
+}
+
+@layer base{
+    body{
+        @apply font-redhat;
+        @apply text-wb-blue;
+    }
+}

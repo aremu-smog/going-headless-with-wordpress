@@ -1,12 +1,31 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Headless WordPress Blog`,
+    description: `Learn how to use headless WordPress with GatsbyJS`,
+    author: `@aremu-smog`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
+    {
+      resolve: `gatsby-source-wordpress`,
+      options: {
+        url: `https://web-boss.com.ng/events/graphql`,
+        type: {
+          Post: {
+            limit: 8,
+          },
+        },
+      },
+    },
+
+    {
+      resolve: `gatsby-plugin-mailchimp`,
+      options: {
+        endpoint: `https://theakankewoman.us16.list-manage.com/subscribe/post?u=f340dafd9608cf09cc988f187&amp;id=a2eb241fd7`,
+        timeout: 3500,
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
